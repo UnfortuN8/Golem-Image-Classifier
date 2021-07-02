@@ -51,15 +51,12 @@ class SimpleService(Service):
         print("Model Trained : Success!")
         while True:
             await asyncio.sleep(10)
-            self._ctx.run(self.SIMPLE_SERVICE, "--predict", "dataset/test/44.jpg")  # idx 0
+            self._ctx.run(self.SIMPLE_SERVICE, "--predict", "golem/work/dataset/test/44.jpg")  # idx 0
 
             future_results = yield self._ctx.commit()
             results = await future_results
 
-            print(f"stats: {results}")
-            steps = self._ctx.commit()
-            yield steps
-            print("prediction made {steps}")
+            print(results[0].stdout.strip())
 
 async def main(subnet_tag, driver=None, network=None):
     async with Golem(
