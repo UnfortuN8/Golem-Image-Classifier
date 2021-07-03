@@ -40,6 +40,16 @@ Want to run image classification for yourself on Golem?
 
 - Predictions will be printed out
 
+----
+
+**Other Tips and Tricks**
+
+- Large Dataset? Using the _ctx.send(mydata.h5, golem/work/output/) you can use h5 files to cut down on image size, just edit the trainmodel function of imageclassifier.py to no longer look through /dataset/train or generate its own h5 files from it.
+
+- Don't know prediction images at the time of building the image? Using _ctx.send(mytest, golem/work/dataset/test) you can send the to the provider, just make sure to change the appropriate argument on the next _ctx.run() to target the file you just sent!
+
+----
+
 Issues? Find Nebula on the [Golem discord](https://discord.com/invite/y29dtcM) 
 
 Improvements? Submit a PR!
