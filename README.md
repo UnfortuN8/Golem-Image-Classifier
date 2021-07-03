@@ -2,7 +2,7 @@
 
 This is my Image Classifier that is built to run on the Golem Network. The Classifier itself utilizes python's Scikit library, more specifically Sklearn. The image classification script itself was based off this amazing article by [Gogul09](https://gogul.dev/software/image-classification-python) and the accompanying repo, although several modifications were made to dockerize the script, run with modern libararies, accept args, as well as some other differences. Thanks to the power of sklearn, this script while it utilizes the RandomForestClassifier, can just as easily be swapped out for LogisticRegression, LinearDiscriminantAnalysis, KNeighborsClassifier, DecisionTreeClassifier, and many others.
 
-The dataset is moved into the task at the time of building the docker image. This is done because Machine Learning datasets can be quite long, and since Golem has a 3 hour task limit having the dataset start in the image is faster than sending it all over socket. The Service works in 2 main parts
+The dataset is moved into the task at the time of building the docker image. This is done because Machine Learning datasets can be quite long, and since Golem has a 3 hour task limit having the dataset start in the image is faster than sending it all over socket. The dataset used in this example is the [Flowers17 Dataset](https://www.robots.ox.ac.uk/~vgg/data/flowers/17/) The Service works in 2 main parts
 
 ----------------
 
